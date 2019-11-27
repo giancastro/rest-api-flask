@@ -1,0 +1,16 @@
+version: "2.4"
+services:  
+  postgresql:
+    network_mode: host
+    build:
+      context: ./postgresql
+      dockerfile: ./Dockerfile
+    ports:
+      - 5432:5432
+  api:
+    network_mode: host
+    build:
+      context: ./api
+      dockerfile: ./Dockerfile
+    ports:
+      - 5000:5000
